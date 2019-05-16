@@ -3,7 +3,7 @@ include('conn.php');
  ?>
 <?php
 $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+VALUES ('Solomiya', 'Hetman', 'solomiya@hetman.com')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

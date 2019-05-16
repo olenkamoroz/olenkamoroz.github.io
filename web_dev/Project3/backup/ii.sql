@@ -43,9 +43,9 @@ CREATE TABLE IF NOT EXISTS `myguests` (
 --
 
 INSERT INTO `myguests` (`id`, `firstname`, `lastname`, `email`, `reg_date`) VALUES
-(1, 'John', 'Doe', 'john@example.com', NULL),
-(2, 'John', 'Ponchik', 'john@example.com', NULL),
-(4, 'John', 'Doe', 'john@example.com', NULL);
+(1, 'Olenka', 'Pona', 'olenka@pona.com', NULL),
+(2, 'Solomiya', 'Hetman', 'solomiya@hetman.com', NULL),
+(4, 'Karina', 'Boksho', 'karina@boksho.com', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
