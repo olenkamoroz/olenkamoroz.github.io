@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script type="text/javascript" src="http://code.jQuery.com/jQuery-1.7.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            #more {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+                text-align: center;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Hide the images by default */
+            .mySlides {
+                display: none;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+                /* On hover, add a black background color with a little bit see-through */
+                .prev:hover, .next:hover {
+                    background-color: rgba(0,0,0,0.8);
+                }
+
+            /* Caption text */
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+                .active, .dot:hover {
+                    background-color: #717171;
+                }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 16px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2
+            }
+
+            .flex-container {
+                display: flex;
+                background-color: Black;
+            }
+
+                .flex-container > div {
+                    background-color: #00000;
+                    margin: 10px;
+                    padding: 20px;
+                    font-size: 30px;
+                }
+
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 70px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50%;
+            }
+
+                .fa:hover {
+                    opacity: 0.7;
+                }
+
+            .fa-facebook {
+                background: #3B5998;
+                color: white;
+            }
+
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+
+            .fa-instagram {
+                background: #125688;
+                color: white;
+            }
+
+            .block {
+                position: fixed;
+                background: pink;
+                color: black;
+                padding: 20px;
+                width: 400px;
+            }
+
+            #div1 {
+                position: center;
+                text-align: center;
+                float: left;
+                width: 30vh;
+                height: 20vh;
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid black;
+                margin-left: 55vh;
+            }
+
+            #div2 {
+                position: center;
+                text-align: center;
+                float: left;
+                width: 30vh;
+                height: 20vh;
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid black;
+            }
+
+            input {
+                margin: 10px;
+            }
+
+            #toggle, #toggle1, #panel, #stop1, #callback1, #chain1 {
+                width: 75vh;
+                height: 50vh;
+                position: center;
+                padding-bottom: 20px;
+            }
+
+            #animate1 {
+                width: 50vh;
+                height: 35vh;
+                position: center;
+                padding-bottom: 20px;
+            }
+
+            #stop1 {
+                width: 75vh;
+                height: 50vh;
+                position: center;
+                padding-bottom: 20px;
+                display: none;
+            }
+        </style>
+        <title>Bungee Jumping</title>
+    </head>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="bungee-jumping4.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="bungee-jumping2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="bungee-jumping3.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div class="block">
+    Love
+</div>
+
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script><br>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140390187-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140390187-1');
+</script>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+    <tr>
+        <td>Adam</td>
+        <td>Johnson</td>
+        <td>67</td>
+    </tr>
+</table><br>
+<br>
+<div class="flex-container">
+
+    <div><img src="bungee-jumping3.jpg" style="width:100%"></div>
+    <div><img src="bungee-jumping4.jpg" style="width:100%"></div>
+    <div><img src="bungee-jumping2.jpg" style="width:100%"></div>
+
+
+</div>
+<br>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1286.5979733722986!2d24.031808078724858!3d49.83877563712151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1558038921794!5m2!1sru!2sua"
+        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br>
+<br>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSI-C-gLbO007BFFPVro8luSWWqwrHCFvrGK66uKWAPsmYOw/viewform?embedded=true"
+        width="640" height="1015" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe><br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
+
+<form action="submit.html">
+
+    First name:<br>
+
+    <input type="text" name="firstname" >
+
+    <br>
+
+    Last name:<br>
+
+    <input type="text" name="lastname" >
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form><br>
+
+<a href="https://www.facebook.com/olenka.moros" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="https://www.instagram.com/nellie__17/?hl=ru" class="fa fa-instagram"></a>
+
+
+<!--- JS Validation -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>JS Validation</h1>
+            <p>Please input a number between 1 and 10:</p>
+            <input id="numb">
+            <button type="button" onclick="Validation()">Submit</button>
+            <p id="demo"></p>
+        </div>
+    </div>
+</div>
+
+<!--- Drag and drop -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>Drag and drop</h1>
+            <p>Drag the image back and forth between the two div elements.</p>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="img/1.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="225" height="125">
+            </div>
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+    </div>
+</div>
+
+<!--- HTML Web Storage -->
+<div class="container-fluid">
+    <div class="text-center">
+        <h1>HTML Web Storage</h1>
+        <form name="form1">
+            <input type="text" name="text1" placeholder="Enter text...">
+            <br>
+            <input type="text" name="text2" placeholder="Enter text...">
+            <br>
+            <input type="text" name="text3" placeholder="Enter text...">
+            <br>
+            <input type="button" value="Assign values" onClick="AssignValues()">
+            <br>
+            <input type="button" value="Show value 1" onClick="Value1()">
+            <br>
+            <input type="button" value="Show value 2" onClick="Value2()">
+            <br>
+            <input type="button" value="Show value 3" onClick="Value3()">
+            <br>
+            <input type="button" value="Remove value 1" onClick="Delete1()">
+            <br>
+            <input type="button" value="Remove value 2" onClick="Delete2()">
+            <br>
+            <input type="button" value="Remove value 3" onClick="Delete3()">
+            <br>
+            <input type="button" value="Clear storage" onClick="ClearStorage()">
+        </form>
+    </div>
+</div><!--- AJAX -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>AJAX</h1>
+            <div class="ajax_container">
+                <h2 id="blue" class="ajax_item">test_url: https://httpbin.org/get</h2>
+                <form class="ajax_item" name="ajax_form">
+                    Endpoint: <input id="data_url" type="text" name="data_url" value="https://httpbin.org/get">
+                </form>
+                <div class="ajax_item">
+                    <a class="waves-effect waves-light btn" onclick="get_ajax('text')"><button>Request_text</button></a>
+                    <a class="waves-effect waves-light btn" onclick="get_ajax('status')"><button>Request_status</button></a>
+                    <a class="waves-effect waves-light btn" onclick="get_ajax('headers')"><button>Request_headers</button></a>
+                </div>
+                <div class="ajax_item" id="aj_cont"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- JQuery Hide/Show FadeIn/Out -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-6">
+            <h1>JQuery Hide/Show</h1>
+            <div>
+                <button id="hide" style="margin-bottom: 10px">Hide</button>
+                <button id="show" style="margin-bottom: 10px">Show</button>
+            </div>
+            <img id="toggle" src="img/1.jpg">
+        </div>
+        <div class="col-6">
+            <h1>JQuery FadeIn/Out</h1>
+            <div>
+                <button id="fadeIn" style="margin-bottom: 10px">FadeIn</button>
+                <button id="fadeOut" style="margin-bottom: 10px">FadeOut</button>
+            </div>
+            <img id="toggle1" src="img/3.jpg">
+        </div>
+    </div>
+</div>
+<!--- JQuery Slide Animate -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-6">
+            <h1>JQuery Slide</h1>
+            <div>
+                <button id="flip" style="margin-bottom: 10px">Click to slide the image</button>
+            </div>
+            <img id="panel" src="img/1.jpg">
+        </div>
+        <div class="col-6">
+            <h1>JQuery Animate</h1>
+            <div>
+                <button id="animate" style="margin-bottom: 10px">Animate</button>
+            </div>
+            <img id="animate1" src="img/3.jpg">
+        </div>
+    </div>
+</div>
+<!--- JQuery Stop Callback -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-6">
+            <h1>JQuery Stop</h1>
+            <div>
+                <button id="stop" style="margin-bottom: 10px">Click to stop the animation</button>
+                <button id="start" style="margin-bottom: 10px">Click to start the animation</button>
+            </div>
+            <img id="stop1" src="img/1.jpg">
+        </div>
+        <div class="col-6">
+            <h1>JQuery Callback</h1>
+            <div>
+                <button id="callback" style="margin-bottom: 10px">Callback</button>
+            </div>
+            <img id="callback1" src="img/3.jpg">
+        </div>
+    </div>
+</div>
+<!--- JQuery Stop Callback -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>JQuery Chaining</h1>
+            <div>
+                <button id="chain" style="margin-bottom: 10px">Start chaining</button>
+            </div>
+            <img id="chain1" src="img/1.jpg">
+        </div>
+    </div>
+</div>
+<!--- jQuery + AJAX + JSON -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>jQuery + AJAX + JSON</h1>
+            <div class="json_content">
+                <a id="get_ip"><button style="margin-bottom: 10px">Get IP</button></a>
+                <div id="ip_div"></div>
+                <a id="get_headers"><button style="margin-bottom: 10px">Get headers</button></a>
+                <div id="headers_div"></div>
+                <a id="get_date"><button style="margin-bottom: 10px">Get date</button></a>
+                <div id="date_div"></div>
+                <a id="get_echo"><button style="margin-bottom: 10px">Get echo</button></a>
+                <div id="echo_div"></div>
+                <a id="get_valid"><button style="margin-bottom: 10px">Get validation</button></a>
+                <div id="valid_div"></div>
+                <a id="get_js_code"><button style="margin-bottom: 10px">Get js_code</button></a>
+                <div id="js_code_div"></div>
+                <a id="get_md5"><button style="margin-bottom: 10px">Get md5</button></a>
+                <div id="md5_div"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- Footer -->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>Social networks</h1>
+        </div>
+        <div class="col-12 social padding">
+            <a href="https://www.facebook.com/AudiUA"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/audi/?hl=uk"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+<script> function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+dots.style.display = "inline";
+btnText.innerHTML = "Read more";
+moreText.style.display = "none";
+} else {
+dots.style.display = "none";
+btnText.innerHTML = "Read less";
+moreText.style.display = "inline";
+}
+}
+
+function Validation() {
+var x, text;
+
+// Get the value of the input field with id="numb"
+x = document.getElementById("numb").value;
+
+// If x is Not a Number or less than one or greater than 10
+if (isNaN(x) || x < 1 || x > 10) {
+text = "Input not valid";
+} else {
+text = "Input OK";
+}
+document.getElementById("demo").innerHTML = text;
+}
+
+function allowDrop(ev) {
+ev.preventDefault();
+}
+
+function drag(ev) {
+ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+ev.preventDefault();
+var data = ev.dataTransfer.getData("text");
+ev.target.appendChild(document.getElementById(data));
+}
+
+function AssignValues() {
+localStorage.setItem("text1", document.form1.text1.value);
+localStorage.setItem("text2", document.form1.text2.value);
+localStorage.setItem("text3", document.form1.text3.value);
+}
+
+function Value1() {
+alert("Value 1 is " + localStorage.getItem("text1"));
+}
+
+function Value2() {
+alert("Value 2 is " + localStorage.getItem("text2"));
+}
+
+function Value3() {
+alert("Value 3 is " + localStorage.getItem("text3"));
+}
+
+function Delete1() {
+localStorage.removeItem("text1")
+alert("Value 1 is removed");
+}
+
+function Delete2() {
+localStorage.removeItem("text2")
+alert("Value 2 is removed");
+}
+
+function Delete3() {
+localStorage.removeItem("text3")
+alert("Value 3 is removed");
+}
+
+function ClearStorage() {
+localStorage.clear();
+alert("Storage was cleared");
+}
+
+var w;
+
+function startWorker() {
+if (typeof(Worker) !== "undefined") {
+if (typeof(w) == "undefined") {
+w = new Worker("web_worker.js");
+}
+w.onmessage = function(event) {
+document.getElementById("result").innerHTML = event.data;
+};
+} else {
+document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+}
+}
+
+function stopWorker() {
+w.terminate();
+w = undefined;
+}
+
+function get_ajax(data_type) {
+data_url = document.forms["ajax_form"]["data_url"].value;
+if (data_url == "") {
+alert("data_url must be filled out");
+return false;
+}
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+if (data_type == 'text') {
+document.getElementById('aj_cont').innerHTML = this.responseText;
+} else if (data_type == 'status') {
+document.getElementById('aj_cont').innerHTML = this.statusText;
+} else if (data_type == 'headers') {
+document.getElementById('aj_cont').innerHTML = this.getAllResponseHeaders();
+}
+
+}
+};
+xhttp.open("GET", data_url, true);
+xhttp.send();
+return xhttp.responseText;
+}
+
+$(document).ready(function() {
+$("#hide").click(function() {
+$("#toggle").hide();
+});
+$("#show").click(function() {
+$("#toggle").show();
+});
+});
+
+$(document).ready(function() {
+$("#fadeIn").click(function() {
+$("#toggle1").fadeIn("slow");
+});
+$("#fadeOut").click(function() {
+$("#toggle1").fadeOut("slow");
+});
+});
+
+$(document).ready(function() {
+$("#flip").click(function() {
+$("#panel").slideToggle("slow");
+});
+});
+
+$(document).ready(function() {
+$("#animate").click(function() {
+var animation = $("#animate1");
+animation.animate({ height: '50vh', opacity: '0.4' }, "slow");
+animation.animate({ width: '75vh', opacity: '0.8' }, "slow");
+animation.animate({ height: '35vh', opacity: '0.4' }, "slow");
+animation.animate({ width: '50vh', opacity: '0.8' }, "slow");
+});
+});
+
+$(document).ready(function() {
+$("#start").click(function() {
+$("#stop1").slideDown(4000);
+});
+$("#stop").click(function() {
+$("#stop1").stop();
+});
+});
+
+$(document).ready(function() {
+$("#callback").click(function() {
+$("#callback1").hide("slow", function() {
+alert("The image is now hidden");
+});
+});
+});
+
+$(document).ready(function() {
+$("#chain").click(function() {
+$("#chain1").slideUp(2000).slideDown(2000);
+});
+});
+
+$(document).ready(function() {
+$("#get_ip").click(function() {
+$.ajax({
+url: "http://ip.jsontest.com/",
+success: function(result) {
+console.log(result);
+$("#ip_div").text(result.ip);
+}
+});
+});
+$("#get_headers").click(function() {
+$.ajax({
+url: "http://headers.jsontest.com/",
+success: function(result) {
+console.log(result);
+$("#headers_div").text(result["Accept-Language"]);
+}
+});
+});
+$("#get_date").click(function() {
+$.ajax({
+url: "http://date.jsontest.com",
+success: function(result) {
+console.log(result);
+$("#date_div").text(result["date"]);
+}
+});
+});
+$("#get_echo").click(function() {
+$.ajax({
+url: "http://echo.jsontest.com/me/Olenka/",
+success: function(result) {
+console.log(result);
+$("#echo_div").text(result["me"]);
+}
+});
+});
+$("#get_valid").click(function() {
+$.ajax({
+url: 'http://validate.jsontest.com/?json={"key":"value"}',
+success: function(result) {
+console.log(result);
+$("#valid_div").text(result["object_or_array"]);
+}
+});
+});
+$("#get_js_code").click(function() {
+$.ajax({ url: 'http://code.jsontest.com', dataType: 'jsonp' });
+});
+$("#get_md5").click(function() {
+$.ajax({
+url: 'http://md5.jsontest.com/?text=example_text',
+success: function(result) {
+console.log(result);
+res = JSON.stringify(result);
+$("#md5_div").text(res);
+}
+});
+});
+});</script>
+
+</body>
+</html>
